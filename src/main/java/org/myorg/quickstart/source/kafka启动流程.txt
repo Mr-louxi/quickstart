@@ -1,0 +1,9 @@
+
+#启动Kafka 流程 ：
+#1.启动zookeeper 切换到zookeeper 根目录 ./bin/zkServer.sh start
+#2.启动kafka  切换到kafka 根目录执行  下面的命令
+nohup  bin/kafka-server-start.sh config/server.properties  &
+#3.验证kafka 是否启动成功  用zookeeper的client 去验证
+# 进入 zookeeper 根目录 执行  ./bin/zkCli.sh -server 127.0.0.1:2181
+#4.输入 ls /brokers
+#5.输入 ls /brokers/ids 如果有输出 则表名启动成功
